@@ -5,8 +5,8 @@
 	</Properties>
 
 	<Appenders>
-		<RollingFile name="file-log" fileName="${log-path}/main.log"
-			filePattern="${log-path}/main-%d{yyyy-MM-dd}.log">
+		<RollingFile name="file-log" fileName="${log-path}/convertToInts.log"
+			filePattern="${log-path}/convertToInts-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
 				<pattern>[%p] %d [%t] %x %c %M - %m%n
 				</pattern>

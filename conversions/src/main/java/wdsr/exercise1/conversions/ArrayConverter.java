@@ -1,12 +1,26 @@
 package wdsr.exercise1.conversions;
 
+import java.io.IOException;
 import java.util.Arrays;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Created by Marek on 14.02.2016.
  */
 public class ArrayConverter {
-    public int[] convertToInts(String[] strings) {
-        return Arrays.stream(strings).mapToInt(Integer::valueOf).toArray();
+	private static final Logger log = LogManager.getLogger("");
+	
+	public int[] convertToInts(String[] strings) {
+		log.debug("convertToInts entered [strings={}]", Arrays.toString(strings));    	
+    	if (strings.length == 0) {
+            log.info("No input provided");
+        }
+        
+        int[] result = Arrays.stream(strings).mapToInt(Integer::valueOf).toArray();
+   	 	log.info("convertToInts exiting,result: "+result);
+        log.debug("convertToInts exiting,result: "+result);
+        return result;
     }
 }
